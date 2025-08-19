@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "l10n_py_real_state",
+    'name': "l10n_py_real_state_raices",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -18,13 +18,12 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'project'],
+    'depends': ['base', 'stock'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/stock_lot_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
