@@ -66,5 +66,5 @@ msgstr ""
 
 #. module: l10n_py_project
 #: model_terms:ir.ui.view,arch_db:l10n_py_project.project_map_view_inherit
-msgid "Tasks"
+msgid "Open Tasks"
 msgstr ""

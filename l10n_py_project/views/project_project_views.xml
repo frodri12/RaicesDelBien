@@ -39,7 +39,7 @@
                 js_class="project_task_map">
                 <field name="display_name" string="Name" />
                 <field name="partner_id" string="Customer" />
-                <field name="task_ids" string="Tasks" />
+                <field name="open_task_count" string="Open Tasks" />
                 <field name="date" string="Date" />
             </map>
         </field>
