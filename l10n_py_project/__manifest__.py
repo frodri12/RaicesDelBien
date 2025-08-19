@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "l10n_py_real_state",
+    'name': "l10n_py_project",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -25,6 +25,8 @@ Long description of module's purpose
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/project_project_views.xml',
+        'views/project_menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.menu" id="project.menu_projects">
+        <field name="name">Projects</field>
+        <field name="action" ref="open_view_project_all_inherit" />
+    </record>
+
+    <record model="ir.ui.menu" id="project.menu_projects_group_stage">
+        <field name="name">Projects</field>
+        <field name="action" ref="open_view_project_all_group_stage_inherit" />
+    </record>
+
+    <!--
+    <menuitem
+        name="Projects"
+        id="menu_projects"
+        action="open_view_project_all_inherit"
+        sequence="100"
+        parent="project.menu_project_management"
+    />
+    <menuitem
+        name="Projects"
+        id="menu_projects_group_stage"
+        action="open_view_project_all_group_stage_inherit"
+        groups="project.group_project_stages"
+        sequence="110"
+        parent="project.menu_project_management"
+    />
+    -->
+
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="edit_project_inherit" model="ir.ui.view">
+        <field name="name">project.project.form.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="l10n_py_supplier_id" widget="res_partner_many2one" context="{'res_partner_search_mode': ('supplier' or False),}"/>
+            </xpath>
+        </field>
+    </record>
+    <!--
+    <record id="project_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">project.kanban</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id">project.project_view_kanban</field>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='card']" position="replace">
+                <t t-name="card">
+                    <field name="name" class="fw-bolder" string="Project Name" />
+                    <div class="d-flex">
+                        <field name="partner_id" string="Contact" />
+                        <field name="user_id" class="ms-auto" widget="many2one_avatar_user" />
+                    </div>
+                </t>
+            </xpath>
+        </field>
+    </record>
+    -->
+
+    <record id="project_map_view_inherit" model="ir.ui.view">
+        <field name="name">project.view.map</field>
+        <field name="model">project.project</field>
+        <field name="priority">12</field>
+        <field name="arch" type="xml">
+            <map res_partner="partner_id" default_order="date" routing="1"
+                js_class="project_task_map">
+                <field name="display_name" string="Name" />
+                <field name="partner_id" string="Customer" />
+                <field name="task_ids" string="Tasks" />
+                <field name="date" string="Date" />
+            </map>
+        </field>
+    </record>
+
+    <!-- Please update both act_window when modifying one (open_view_project_all or
+    open_view_project_all_group_stage) as one or the other is used in the menu menu_project -->
+    <record id="open_view_project_all_inherit" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="path">l10n_py_project</field>
+        <field name="res_model">project.project</field>
+        <field name="domain">[]</field>
+        <field name="context">{'display_milestone_deadline': True,
+            'search_default_group_by_groupby_stage': 1, , 'search_default_groupby_stage': 1}</field>
+        <field name="view_mode">kanban,list,form,map</field>
+        <field name="view_id" ref="project.project_view_kanban" />
+        <field name="search_view_id" ref="project.view_project_project_filter" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No projects found. Let's create one!
+            </p>
+            <p>
+                Create projects to organize your tasks. Define a different workflow for each project.
+            </p>
+        </field>
+    </record>
+
+    <!-- Please update both act_window when modifying one (open_view_project_all or
+    open_view_project_all_group_stage) as one or the other is used in the menu menu_project -->
+    <record id="open_view_project_all_group_stage_inherit" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">project.project</field>
+        <field name="context">{'display_milestone_deadline': True,
+            'search_default_group_by_groupby_stage': 1, 'search_default_groupby_stage': 1}</field>
+        <field name="domain">[]</field>
+        <field name="view_mode">kanban,list,form,calendar,activity,map</field>
+        <field name="view_id" ref="project.view_project_kanban" />
+        <field name="search_view_id" ref="project.view_project_project_filter" />
+        <field name="target">main</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No projects found. Let's create one!
+            </p>
+            <p>
+                Projects contain tasks on the same topic, and each has its own dashboard.
+            </p>
+        </field>
+    </record>
+</odoo>
