@@ -40,6 +40,7 @@
                 <field name="display_name" string="Name" />
                 <field name="partner_id" string="Customer" />
                 <field name="open_task_count" string="Open Tasks" />
+                <field name="task_count" string="Task Count" />
                 <field name="date" string="Date" />
             </map>
         </field>

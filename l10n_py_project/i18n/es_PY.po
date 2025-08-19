@@ -70,3 +70,8 @@ msgstr "Proveedor"
 #: model_terms:ir.ui.view,arch_db:l10n_py_project.project_map_view_inherit
 msgid "Open Tasks"
 msgstr "Tareas abiertas"
+
+#. module: l10n_py_project
+#: model_terms:ir.ui.view,arch_db:l10n_py_project.project_map_view_inherit
+msgid "Task Count"
+msgstr "Total de tareas"
